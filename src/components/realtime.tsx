@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 const RealTime = () => {
-  const [currentTime, setCurrentTime] = useState(null);
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
   useEffect(() => {
     setCurrentTime(new Date());
 

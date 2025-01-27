@@ -1,5 +1,3 @@
-import { time } from "console";
-
 export const routine = [
   {
     id: "mon",

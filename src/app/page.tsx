@@ -6,22 +6,35 @@ import RealTime from "@/components/realtime";
 import { routine } from "@/data/routine";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+type routineProps = {
+  id: string;
+  name: string;
+  classes: {
+    id: string;
+    code: string;
+    name: string;
+    teacher: string;
+    time: string;
+  }[];
+};
 
 export default function Home() {
   const [currentDay, setCurrentDay] = useState<string | null>(null);
-  const [currentRoutine, setCurrentRoutine] = useState(null);
+  const [currentRoutine, setCurrentRoutine] = useState<routineProps | null>(
+    null
+  );
   useEffect(() => {
     const day = new Date().toUTCString().slice(0, 3).toLowerCase();
     // console.log(day);
     setCurrentDay(day);
 
     const currRoutine = routine.find((r) => r.id === day);
-    setCurrentRoutine(currRoutine);
+    setCurrentRoutine(currRoutine || null);
   }, []);
 
   const toggleRoutine = (day: string) => {
     const selectedRoutine = routine.find((r) => r.id === day);
-    setCurrentRoutine(selectedRoutine);
+    setCurrentRoutine(selectedRoutine || null);
   };
   if (!currentRoutine || !currentDay) {
     return <Loader />;
