@@ -1,4 +1,3 @@
-import { colors } from "@/data/colors";
 import React from "react";
 
 type Props = {
