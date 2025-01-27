@@ -18,7 +18,9 @@ const RealTime = () => {
     return null;
   }
   return (
-    <span className="text-white font-bold">{currentTime.toUTCString()}</span>
+    <span className="text-white font-bold">
+      {currentTime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
+    </span>
   );
 };
 
