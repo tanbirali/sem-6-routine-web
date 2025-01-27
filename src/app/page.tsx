@@ -51,7 +51,7 @@ export default function Home() {
       <h1 className="text-xl text-white font-extrabold"> Deparment Of CSE </h1>
       <h2 className="text-lg text-white font-bold">
         {" "}
-        3rd Year - 6th Sem Rotuine{" "}
+        3rd Year - 6th Sem Routine{" "}
       </h2>
       <div className="flex gap-3">
         <p className="text-lg text-white font-bold">Today is </p>
